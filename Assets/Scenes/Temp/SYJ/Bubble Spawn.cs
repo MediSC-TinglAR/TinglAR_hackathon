@@ -34,7 +34,9 @@ public class BubbleSpawn : MonoBehaviour
                 Vector3 spawnPosition = GetRandomSpawnPosition();
 
                 // Prefab 오브젝트를 인스턴스화
-                GameObject spawnedObject = Instantiate(SpawnObject, spawnPosition, Quaternion.identity); // (복제할 대상, 위치, 방향)
+                GameObject spawnedObject = Instantiate(SpawnObject, transform);
+                spawnedObject.transform.localPosition = spawnPosition;
+                spawnedObject.transform.localRotation = Quaternion.identity; // (복제할 대상, 위치, 방향)
 
                 Debug.Log($"=========enemyCount: {bubbleCount}");
 

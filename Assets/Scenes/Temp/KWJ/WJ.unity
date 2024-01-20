@@ -123,6 +123,50 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1 &131656053
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 131656055}
+  - component: {fileID: 131656054}
+  m_Layer: 0
+  m_Name: InjectionGameManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &131656054
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 131656053}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 91bd908ee510b41329b4a9253e346460, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!4 &131656055
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 131656053}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &143437350
 GameObject:
   m_ObjectHideFlags: 0
@@ -135,6 +179,7 @@ GameObject:
   - component: {fileID: 143437355}
   - component: {fileID: 143437354}
   - component: {fileID: 143437358}
+  - component: {fileID: 143437359}
   m_Layer: 0
   m_Name: XR Origin
   m_TagString: Untagged
@@ -203,6 +248,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ae0e6ab3613f04bc9baf99e11328c221, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  bubbleSpawn: {fileID: 0}
   m_PrefabsList:
   - imageGuid: aae75228-1973-4dc0-b7a2-53d1566ee402
     imagePrefab: {fileID: 3105049931878059243, guid: 54ebc69db042344c1977a1e2ea26a018,
@@ -214,6 +260,24 @@ MonoBehaviour:
     imagePrefab: {fileID: 7038220984588547355, guid: 3e7c8c5264f384d67aafef87f493690a,
       type: 3}
   m_ImageLibrary: {fileID: 11400000, guid: 165e5b639279542e0a527c898b13e40b, type: 2}
+--- !u!114 &143437359
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 143437350}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 488dc7f74688541258cf6d6bcc29649c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  placedPrefab:
+  - {fileID: 2210225716516359747, guid: 520c2a1c5d50e4936b160c2a09c17f6d, type: 3}
+  arCamera: {fileID: 1718838894}
+  placedObjectLayerMask:
+    serializedVersion: 2
+    m_Bits: 128
 --- !u!1 &191042748
 GameObject:
   m_ObjectHideFlags: 0
@@ -1967,6 +2031,7 @@ GameObject:
   - component: {fileID: 1718838892}
   - component: {fileID: 1718838891}
   - component: {fileID: 1718838890}
+  - component: {fileID: 1718838895}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -2111,7 +2176,7 @@ MonoBehaviour:
   m_TrackingStateInput:
     m_UseReference: 0
     m_Action:
-      m_Name: 
+      m_Name: Tracking State Input
       m_Type: 0
       m_ExpectedControlType: 
       m_Id: 6d001a50-7fa1-4cdb-8d40-807392e55ce1
@@ -2245,6 +2310,22 @@ Camera:
   m_OcclusionCulling: 1
   m_StereoConvergence: 10
   m_StereoSeparation: 0.022
+--- !u!114 &1718838895
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1718838888}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c49b4cc203aa6414fae5c798d1d0e7d6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_EventMask:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_MaxRayIntersections: 0
 --- !u!1 &1809621586
 GameObject:
   m_ObjectHideFlags: 0
@@ -2551,3 +2632,4 @@ SceneRoots:
   - {fileID: 1291259211}
   - {fileID: 1809621590}
   - {fileID: 143437356}
+  - {fileID: 131656055}
