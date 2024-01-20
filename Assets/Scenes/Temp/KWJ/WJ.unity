@@ -134,8 +134,7 @@ GameObject:
   - component: {fileID: 143437356}
   - component: {fileID: 143437355}
   - component: {fileID: 143437354}
-  - component: {fileID: 143437351}
-  - component: {fileID: 143437357}
+  - component: {fileID: 143437358}
   m_Layer: 0
   m_Name: XR Origin
   m_TagString: Untagged
@@ -143,26 +142,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &143437351
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 143437350}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 467eefdf66a9b4c24b9d89f2f71b2ce9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_PrefabsList:
-  - imageGuid: aae75228-1973-4dc0-b7a2-53d1566ee402
-    imagePrefab: {fileID: 3279860958548870494, guid: 2178696ec754a47f785be373a85014e4,
-      type: 3}
-  - imageGuid: e7397c6d-8bf6-44bd-ae7f-3e56aef2687c
-    imagePrefab: {fileID: 3279860958548870494, guid: 2178696ec754a47f785be373a85014e4,
-      type: 3}
-  m_ImageLibrary: {fileID: 11400000, guid: 165e5b639279542e0a527c898b13e40b, type: 2}
 --- !u!114 &143437354
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -177,7 +156,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_SerializedLibrary: {fileID: 11400000, guid: 165e5b639279542e0a527c898b13e40b,
     type: 2}
-  m_MaxNumberOfMovingImages: 200
+  m_MaxNumberOfMovingImages: 3
   m_TrackedImagePrefab: {fileID: 0}
 --- !u!114 &143437355
 MonoBehaviour:
@@ -212,7 +191,7 @@ Transform:
   - {fileID: 1426237014}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &143437357
+--- !u!114 &143437358
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -221,11 +200,20 @@ MonoBehaviour:
   m_GameObject: {fileID: 143437350}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a6d5323815f004189af1fb658b6c9369, type: 3}
+  m_Script: {fileID: 11500000, guid: ae0e6ab3613f04bc9baf99e11328c221, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_AlternativePrefab: {fileID: 8682790842898555120, guid: a34fff2b4f91f438197886db4a364e3e,
-    type: 3}
+  m_PrefabsList:
+  - imageGuid: aae75228-1973-4dc0-b7a2-53d1566ee402
+    imagePrefab: {fileID: 3279860958548870494, guid: 2178696ec754a47f785be373a85014e4,
+      type: 3}
+  - imageGuid: e7397c6d-8bf6-44bd-ae7f-3e56aef2687c
+    imagePrefab: {fileID: 7038220984588547355, guid: 3e7c8c5264f384d67aafef87f493690a,
+      type: 3}
+  - imageGuid: 79e88f53-c332-4ef1-977f-942990c16195
+    imagePrefab: {fileID: 3279860958548870494, guid: 2178696ec754a47f785be373a85014e4,
+      type: 3}
+  m_ImageLibrary: {fileID: 11400000, guid: 165e5b639279542e0a527c898b13e40b, type: 2}
 --- !u!1 &191042748
 GameObject:
   m_ObjectHideFlags: 0
