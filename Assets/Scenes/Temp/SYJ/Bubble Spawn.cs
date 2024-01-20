@@ -5,11 +5,11 @@ using UnityEngine;
 public class BubbleSpawn : MonoBehaviour
 {
     public Transform[] spawnPoints;
-    public GameObject SpawnObject; //PrefabÀ¸·Î »ı¼ºµÉ ¿ÀºêÁ§Æ®
+    public GameObject SpawnObject; //Prefabìœ¼ë¡œ ìƒì„±ë  ì˜¤ë¸Œì íŠ¸
 
     public int xPos;
     public int zPos;
-    public int bubbleCount;
+    public static int bubbleCount;
     public int score=0;
 
     public bool playingGame = true;
@@ -29,19 +29,19 @@ public class BubbleSpawn : MonoBehaviour
 
     IEnumerator StartSpawing()
     {  
-            while (bubbleCount < 5) // ÃÑ 5°³¾¿ »ı¼º
+            while (bubbleCount < 5) // ì´ 5ê°œì”© ìƒì„±
             {
                 Vector3 spawnPosition = GetRandomSpawnPosition();
 
-                // Prefab ¿ÀºêÁ§Æ®¸¦ ÀÎ½ºÅÏ½ºÈ­
-                GameObject spawnedObject = Instantiate(SpawnObject, spawnPosition, Quaternion.identity); // (º¹Á¦ÇÒ ´ë»ó, À§Ä¡, ¹æÇâ)
+                // Prefab ì˜¤ë¸Œì íŠ¸ë¥¼ ì¸ìŠ¤í„´ìŠ¤í™”
+                GameObject spawnedObject = Instantiate(SpawnObject, spawnPosition, Quaternion.identity); // (ë³µì œí•  ëŒ€ìƒ, ìœ„ì¹˜, ë°©í–¥)
 
                 Debug.Log($"=========enemyCount: {bubbleCount}");
 
-                // À§Ä¡ Á¤º¸ ·Î±× Ãâ·Â
+                // ìœ„ì¹˜ ì •ë³´ ë¡œê·¸ ì¶œë ¥
                 Debug.Log($"=========Object spawned at position: {spawnPosition}");
 
-                // ¸ŞÀÎ Ä«¸Ş¶óÀÇ À§Ä¡ ¹× ¹æÇâ Á¤º¸ ·Î±× Ãâ·Â
+                // ë©”ì¸ ì¹´ë©”ë¼ì˜ ìœ„ì¹˜ ë° ë°©í–¥ ì •ë³´ ë¡œê·¸ ì¶œë ¥
                 Camera mainCamera = Camera.main;
                 if (mainCamera != null)
                 {
@@ -52,7 +52,7 @@ public class BubbleSpawn : MonoBehaviour
             bubbleCount += 1;
             score += 1;
 
-            yield return new WaitForSeconds(4); // 4ÃÊ ±âÁØÀ¸·Î »ı¼º
+            yield return new WaitForSeconds(4); // 4ì´ˆ ê¸°ì¤€ìœ¼ë¡œ ìƒì„±
 
             }
 
@@ -61,8 +61,8 @@ public class BubbleSpawn : MonoBehaviour
 
     Vector3 GetRandomSpawnPosition()
     {
-        float xPos = Random.Range(2, 4); // Position XÃà -2~ 4 »çÀÌÀÇ ·£´ı ¹üÀ§ »ı¼º
-        float zPos = Random.Range(2, 4); // Position ZÃà 3 ~ 5 »çÀÌÀÇ ·£´ı ¹üÀ§ »ı¼º
+        float xPos = Random.Range(2, 4); // Position Xì¶• -2~ 4 ì‚¬ì´ì˜ ëœë¤ ë²”ìœ„ ìƒì„±
+        float zPos = Random.Range(2, 4); // Position Zì¶• 3 ~ 5 ì‚¬ì´ì˜ ëœë¤ ë²”ìœ„ ìƒì„±
 
         return new Vector3(xPos, Random.Range(-1, 1), zPos);
     }
