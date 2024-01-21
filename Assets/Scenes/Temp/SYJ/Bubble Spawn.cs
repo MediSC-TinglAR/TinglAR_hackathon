@@ -57,6 +57,7 @@ public class BubbleSpawn : MonoBehaviour
             bubbleCount += 1;
             score += 1;
             GameManager.instance.AddScore(1);
+            GameObject.FindObjectOfType<StartControl>().SetCherryText(GameManager.instance.score);
             Debug.Log("CURRENT SCORE " + score);
 
             yield return new WaitForSeconds(4); // 4초 기준으로 생성
@@ -68,7 +69,7 @@ public class BubbleSpawn : MonoBehaviour
 
     Vector3 GetRandomSpawnPosition()
     {
-        float xPos = Random.Range(2, 4); // Position X축 -2~ 4 사이의 랜덤 범위 생성
+        float xPos = Random.Range(1, 5); // Position X축 -2~ 4 사이의 랜덤 범위 생성
         float zPos = Random.Range(0, 4); // Position Z축 3 ~ 5 사이의 랜덤 범위 생성
 
         return new Vector3(xPos, Random.Range(-1, 1), zPos);

@@ -2,15 +2,14 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class InjectionGameManager : MonoBehaviour
+public class MainPet : MonoBehaviour
 {
-    public BubbleSpawn BubbleSpawner;
-    public PlaceOnPlane placeOnPlane;
-    public DetectImageManager detectImageManager; 
+    public Animator animator;
     // Start is called before the first frame update
     void Start()
     {
-        detectImageManager.enabled = true;
+        if (GameManager.instance.isLevelUp)
+            animator.SetTrigger("Clap");
     }
 
     // Update is called once per frame

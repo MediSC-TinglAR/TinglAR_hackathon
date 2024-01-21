@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
@@ -7,6 +8,7 @@ using UnityEngine.UI;
 public class StartControl : MonoBehaviour
 {
     float fadeCount = 50f;
+    public TMP_Text scoreText;
     // public GameObject DoctorMessage;
     // public Image DocImg;
     private Image StartImg;
@@ -77,14 +79,21 @@ public class StartControl : MonoBehaviour
     public void FinishGame()
     {
         finishLogo.SetActive(true);
+        GameManager.instance.isLevelUp = true;
         //FinishImg = finishLogo.GetComponent<Image>();
         //FinishImg.color = FinishImg.color - new Color(0f, 0f, 0f, 1f);
         //StartCoroutine(FadeIn());
+
     }
 
     public void MoveScene()
     {
         SceneManager.LoadScene("Main");
+    }
+
+    public void SetCherryText(int num)
+    {
+        scoreText.text = num.ToString();
     }
 
     void ActivateGameStart()

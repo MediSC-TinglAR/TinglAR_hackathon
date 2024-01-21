@@ -8,6 +8,7 @@ public class SceneChanger : MonoBehaviour
 {
     public void gameSceneChange(){
         SceneManager.LoadScene("MainGame");
+        GameManager.instance.isInGame = true;
     }
 
     public void mainSceneChange()
