@@ -27,6 +27,7 @@ public class DetectImageManager : MonoBehaviour, ISerializationCallbackReceiver
             imagePrefab = prefab;
         }
     }
+    [SerializeField] public GameObject bubbleSpawn;
 
     [SerializeField]
     [HideInInspector]
@@ -39,6 +40,7 @@ public class DetectImageManager : MonoBehaviour, ISerializationCallbackReceiver
     [SerializeField]
     [Tooltip("Reference Image Library")]
     XRReferenceImageLibrary m_ImageLibrary;
+
 
     /// <summary>
     /// Get the <c>XRReferenceImageLibrary</c>
@@ -85,12 +87,21 @@ public class DetectImageManager : MonoBehaviour, ISerializationCallbackReceiver
     void OnTrackedImagesChanged(ARTrackedImagesChangedEventArgs eventArgs)
     {
         Debug.Log("CHANGED");
+        Transform tf = gameObject.transform;
         foreach (var trackedImage in eventArgs.added)
         {
             // Give the initial image a reasonable default scale
             var minLocalScalar = Mathf.Min(trackedImage.size.x, trackedImage.size.y) / 2;
             trackedImage.transform.localScale = new Vector3(minLocalScalar, minLocalScalar, minLocalScalar);
             AssignPrefab(trackedImage);
+            if (trackedImage.name == "Pet")
+                tf = trackedImage.transform;
+        }
+        if (eventArgs.added.Count == 2)
+        {
+            bubbleSpawn.transform.position = tf.position + new Vector3(1, 0, 0);
+            bubbleSpawn.gameObject.SetActive(true);
+
         }
 
         foreach (var trackedImage in eventArgs.updated)
