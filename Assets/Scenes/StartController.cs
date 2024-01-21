@@ -11,21 +11,23 @@ public class StartControl : MonoBehaviour
     // public Image DocImg;
     private Image StartImg;
     private Image FinishImg;
-    public GameObject doctorMessage;
+    public GameObject Instruction;
     public GameObject StartLogo;
     public GameObject finishLogo;
+    public GameObject startgamebtn;
     Color selectedColor;
     // Color selectedColor2;
 
     void Start()
     {
-        doctorMessage.SetActive(false);
         finishLogo.SetActive(false);
+        StartLogo.SetActive(false);
         selectedColor = Color.white;
         selectedColor.a = 1f;
         StartImg = StartLogo.GetComponent<Image>();
         StartImg.color = selectedColor;
-        StartCoroutine(ShowArm());
+        // StartCoroutine(ShowArm());
+        
         // DoctorMessage.SetActive(false);
         // DocImg = DoctorMessage.GetComponent<Image>();
         // DocImg.color = selectedColor2;
@@ -34,7 +36,6 @@ public class StartControl : MonoBehaviour
     IEnumerator ShowArm()
     {
         yield return new WaitForSeconds(5f);
-        doctorMessage.SetActive(true);
     }
 
     IEnumerator FadeIn()
@@ -49,6 +50,7 @@ public class StartControl : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        Button startgame = startgamebtn.GetComponent<Button>();
         // while(fadeCount>0f)
         // {
         //     selectedColor.a -= 0.02f;
@@ -61,6 +63,7 @@ public class StartControl : MonoBehaviour
         //     DoctorMessage.SetActive(true);
         //     fadeCount = -1f;
         // }
+        startgame.onClick.AddListener(() => ActivateGameStart());
 
         GameObject DetectArm = GameObject.FindWithTag("pet");
         if (DetectArm != null)
@@ -68,7 +71,6 @@ public class StartControl : MonoBehaviour
             selectedColor.a -= 0.02f;
             StartImg.color = selectedColor;
             StopAllCoroutines();
-            doctorMessage.SetActive(false);
         }
     }
 
@@ -83,5 +85,11 @@ public class StartControl : MonoBehaviour
     public void MoveScene()
     {
         SceneManager.LoadScene("Main");
+    }
+
+    void ActivateGameStart()
+    {
+        Instruction.SetActive(false);
+        StartLogo.SetActive(true);
     }
 }
