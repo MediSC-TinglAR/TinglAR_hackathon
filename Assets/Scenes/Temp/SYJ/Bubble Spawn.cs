@@ -56,6 +56,8 @@ public class BubbleSpawn : MonoBehaviour
 
             bubbleCount += 1;
             score += 1;
+            GameManager.instance.AddScore(1);
+            Debug.Log("CURRENT SCORE " + score);
 
             yield return new WaitForSeconds(4); // 4초 기준으로 생성
 

@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class StartControl : MonoBehaviour
@@ -74,8 +75,13 @@ public class StartControl : MonoBehaviour
     public void FinishGame()
     {
         finishLogo.SetActive(true);
-        FinishImg = finishLogo.GetComponent<Image>();
-        FinishImg.color = FinishImg.color - new Color(0f, 0f, 0f, 1f);
-        StartCoroutine(FadeIn());
+        //FinishImg = finishLogo.GetComponent<Image>();
+        //FinishImg.color = FinishImg.color - new Color(0f, 0f, 0f, 1f);
+        //StartCoroutine(FadeIn());
+    }
+
+    public void MoveScene()
+    {
+        SceneManager.LoadScene("Main");
     }
 }

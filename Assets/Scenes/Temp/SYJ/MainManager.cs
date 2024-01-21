@@ -6,12 +6,12 @@ using TMPro;
 
 public class MainManager : MonoBehaviour
 {
-    public TMP_Text scoreText; // Á¡¼ö¸¦ Ãâ·ÂÇÒ UI ÅØ½ºÆ®
+    public TMP_Text scoreText; // ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ UI ï¿½Ø½ï¿½Æ®
 
-    // Awake ¸Þ¼­µå ´ë½Å Start ¸Þ¼­µå¸¦ »ç¿ëÇÕ´Ï´Ù.
+    // Awake ï¿½Þ¼ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ Start ï¿½Þ¼ï¿½ï¿½å¸¦ ï¿½ï¿½ï¿½ï¿½Õ´Ï´ï¿½.
     private void Start()
     {
-        // GameManager.instance°¡ nullÀÌ ¾Æ´ÑÁö È®ÀÎÇÏ°í ±× ÈÄ¿¡ score¸¦ °¡Á®¿Àµµ·Ï ÇÕ´Ï´Ù.
+        // GameManager.instanceï¿½ï¿½ nullï¿½ï¿½ ï¿½Æ´ï¿½ï¿½ï¿½ È®ï¿½ï¿½ï¿½Ï°ï¿½ ï¿½ï¿½ ï¿½Ä¿ï¿½ scoreï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Õ´Ï´ï¿½.
         if (GameManager.instance != null)
         {
             int myScore = GameManager.instance.score;
@@ -23,7 +23,7 @@ public class MainManager : MonoBehaviour
         }
     }
 
-    // Á¡¼ö ÅØ½ºÆ® °»½Å
+    // ï¿½ï¿½ï¿½ï¿½ ï¿½Ø½ï¿½Æ® ï¿½ï¿½ï¿½ï¿½
     public void UpdateScoreText(int newScore)
     {
         scoreText.text = newScore+"";
