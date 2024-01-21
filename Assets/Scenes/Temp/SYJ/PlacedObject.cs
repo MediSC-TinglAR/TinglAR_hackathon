@@ -33,6 +33,8 @@ public class PlacedObject : MonoBehaviour
             }
         }
     }
+
+    public Animator animator;
     private void Awake()
     {
         cubeSelected.SetActive(false); // 선택된 큐브를 비활성화
@@ -40,18 +42,16 @@ public class PlacedObject : MonoBehaviour
     // 터치 후 드래그하는 위치로 현재 선택된 오브젝트를 이동
     public void OnPointerClick(BaseEventData bed)
     {
-        if (IsSelected) // 현재 객체가 선택된 객체인 경우
-        {
-            // PointerEventData ped = (PointerEventData)bed;
-            // if (Utility.Raycast(ped.position, out Pose hitPose)) // 터치 위치에 Raycast를 수행하여 plane에 부딪히는 위치를 얻음
-            // {
-            //     transform.position = hitPose.position; // 현재 선택된 객체를 plane에 부딪힌 위치로 이동시킴
-            // }
-            Debug.Log("Hello");
-            Destroy(gameObject);
-            SelectedObject = null;
-            BubbleSpawn.bubbleCount -= 1;
 
-        }
+        Debug.Log("Hello");
+        animator.enabled = true;
+        Invoke("DestroyBubble", 1.5f);
+    }
+
+    public void DestroyBubble()
+    {
+        Destroy(gameObject);
+        SelectedObject = null;
+        BubbleSpawn.bubbleCount -= 1;
     }
 }

@@ -20,8 +20,9 @@ public class PlaceOnPlane : MonoBehaviour
         ray = arCamera.ScreenPointToRay(touchPosition);
         if( Physics.Raycast(ray, out hit, Mathf.Infinity, placedObjectLayerMask))
         {
-            PlacedObject.SelectedObject = hit.transform.GetComponentInChildren<PlacedObject>();
-            return;
+            Debug.Log("SHOT");
+            // PlacedObject.SelectedObject = hit.transform.GetComponentInChildren<PlacedObject>();
+            // return;
         }
 
         PlacedObject.SelectedObject = null; // 오브젝트 선택 취소

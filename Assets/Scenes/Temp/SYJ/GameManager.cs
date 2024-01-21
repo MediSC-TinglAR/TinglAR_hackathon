@@ -53,7 +53,7 @@ public class GameManager : MonoBehaviour
     public void LoadNextScene()
     {
         int currentSceneIndex = SceneManager.GetActiveScene().buildIndex;
-        SceneManager.LoadScene(currentSceneIndex + 1);
+        SceneManager.LoadScene(1);
     }
 
     // 게임 재시작하는 메서드

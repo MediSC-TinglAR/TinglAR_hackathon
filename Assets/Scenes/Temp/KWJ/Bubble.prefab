@@ -61,7 +61,7 @@ PrefabInstance:
     - target: {fileID: -2036881801077586415, guid: 9343d9f0906dcd041ab09878e62c1bb2,
         type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: -666801481235163336, guid: 9343d9f0906dcd041ab09878e62c1bb2,
         type: 3}
@@ -81,7 +81,7 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 9343d9f0906dcd041ab09878e62c1bb2,
         type: 3}
       propertyPath: m_Name
-      value: BubbleAndCherries_
+      value: Bubble
       objectReference: {fileID: 0}
     - target: {fileID: 3001675973296384212, guid: 9343d9f0906dcd041ab09878e62c1bb2,
         type: 3}

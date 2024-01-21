@@ -22,7 +22,10 @@ public class BubbleSpawn : MonoBehaviour
 
     private void FixedUpdate()
     {
-
+        if (score > 5)
+        {
+            GameObject.FindObjectOfType<StartControl>().FinishGame();
+        }
         if (bubbleCount < 5 && didInit)
             StartCoroutine(StartSpawing());
     }
@@ -64,7 +67,7 @@ public class BubbleSpawn : MonoBehaviour
     Vector3 GetRandomSpawnPosition()
     {
         float xPos = Random.Range(2, 4); // Position X축 -2~ 4 사이의 랜덤 범위 생성
-        float zPos = Random.Range(2, 4); // Position Z축 3 ~ 5 사이의 랜덤 범위 생성
+        float zPos = Random.Range(0, 4); // Position Z축 3 ~ 5 사이의 랜덤 범위 생성
 
         return new Vector3(xPos, Random.Range(-1, 1), zPos);
     }

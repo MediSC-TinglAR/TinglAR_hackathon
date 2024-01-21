@@ -7,7 +7,7 @@ using UnityEngine.SceneManagement;
 public class SceneChanger : MonoBehaviour
 {
     public void gameSceneChange(){
-        SceneManager.LoadScene("YJ-sphere");
+        SceneManager.LoadScene("MainGame");
     }
 
     public void mainSceneChange()

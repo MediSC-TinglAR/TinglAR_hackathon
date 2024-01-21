@@ -257,7 +257,10 @@ MonoBehaviour:
     imagePrefab: {fileID: 3279860958548870494, guid: 2178696ec754a47f785be373a85014e4,
       type: 3}
   - imageGuid: 79e88f53-c332-4ef1-977f-942990c16195
-    imagePrefab: {fileID: 7038220984588547355, guid: 3e7c8c5264f384d67aafef87f493690a,
+    imagePrefab: {fileID: 3279860958548870494, guid: 2178696ec754a47f785be373a85014e4,
+      type: 3}
+  - imageGuid: 34b7febc-dea0-4f71-a59a-a68da68c4952
+    imagePrefab: {fileID: 3279860958548870494, guid: 2178696ec754a47f785be373a85014e4,
       type: 3}
   m_ImageLibrary: {fileID: 11400000, guid: 165e5b639279542e0a527c898b13e40b, type: 2}
 --- !u!114 &143437359
